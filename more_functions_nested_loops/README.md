@@ -13,3 +13,4 @@ This project covers more functions and nested loops in C.
 - `6-print_line.c` - draws a straight line in the terminal
 - `7-print_diagonal.c` - draws a diagonal line on the terminal
 - `8-print_square.c` - prints a square of # characters
+- `9-fizz_buzz.c` - prints the Fizz-Buzz test from 1 to 100
