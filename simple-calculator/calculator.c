@@ -15,20 +15,39 @@ void print_menu(void)
 }
 
 /**
- * main - simple calculator skeleton
+ * main - simple calculator with menu loop
  *
  * Return: Always 0.
  */
 int main(void)
 {
-	int choice = 0;
+	int choice, r, c;
 
 	printf("Simple Calculator\n");
-	print_menu();
-	printf("Choice: ");
-	if (scanf("%d", &choice) != 1)
-		choice = 0;
-	if (choice == 0)
-		printf("Bye!\n");
+	while (1)
+	{
+		print_menu();
+		printf("Choice: ");
+		r = scanf("%d", &choice);
+		if (r == EOF)
+		{
+			printf("Bye!\n");
+			break;
+		}
+		if (r != 1)
+		{
+			while ((c = getchar()) != '\n' && c != EOF)
+				;
+			printf("Invalid choice\n");
+			continue;
+		}
+		if (choice == 0)
+		{
+			printf("Bye!\n");
+			break;
+		}
+		if (choice < 0 || choice > 4)
+			printf("Invalid choice\n");
+	}
 	return (0);
 }
