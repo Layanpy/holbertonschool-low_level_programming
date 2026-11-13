@@ -73,6 +73,8 @@ void do_operation(int choice)
 	}
 	if (choice == 1)
 		printf("Result: %d\n", a + b);
+	else if (choice == 2)
+		printf("Result: %d\n", a - b);
 }
 
 /**
