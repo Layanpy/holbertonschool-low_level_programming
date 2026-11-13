@@ -34,16 +34,16 @@ void clear_input(void)
  *
  * Return: 1 on success, 0 on failure
  */
-int read_operands(int *a, int *b)
+int read_operands(double *a, double *b)
 {
 	printf("A: ");
-	if (scanf("%d", a) != 1)
+	if (scanf("%lf", a) != 1)
 	{
 		clear_input();
 		return (0);
 	}
 	printf("B: ");
-	if (scanf("%d", b) != 1)
+	if (scanf("%lf", b) != 1)
 	{
 		clear_input();
 		return (0);
@@ -59,7 +59,7 @@ int read_operands(int *a, int *b)
  */
 void do_operation(int choice)
 {
-	int a, b;
+	double a, b;
 
 	if (choice < 1 || choice > 4)
 	{
@@ -72,11 +72,15 @@ void do_operation(int choice)
 		return;
 	}
 	if (choice == 1)
-		printf("Result: %d\n", a + b);
+		printf("Result: %.15g\n", a + b);
 	else if (choice == 2)
-		printf("Result: %d\n", a - b);
+		printf("Result: %.15g\n", a - b);
 	else if (choice == 3)
-		printf("Result: %d\n", a * b);
+		printf("Result: %.15g\n", a * b);
+	else if (b == 0)
+		printf("Error: division by zero\n");
+	else
+		printf("Result: %.15g\n", a / b);
 }
 
 /**
