@@ -1,10 +1,9 @@
 #include "function_pointers.h"
 
 /**
- * print_name - prints a name using a given function
- * @name: name to
-  print
- * @f: pointer to the function that prints the name
+ * print_name - prints a name
+ * @name: the name to print
+ * @f: function used to print
  *
  * Return: Nothing.
  */
